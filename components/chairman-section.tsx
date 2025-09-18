@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import { useLanguage } from "@/lib/i18n/context"
 
@@ -31,6 +32,12 @@ export function ChairmanSection() {
                 {t.home.chairman.message}
               </p>
               <p className="leading-7">
+                {t.home.chairman.paragraph1}
+              </p>
+              <p className="leading-7">
+                {t.home.chairman.paragraph2}
+              </p>
+              {/* <p className="leading-7">
                 Our administration is committed to transparency, sustainable development, and ensuring that every voice
                 in our community is heard. Together, we are implementing innovative solutions to improve infrastructure,
                 enhance public services, and create opportunities for economic growth.
@@ -38,7 +45,8 @@ export function ChairmanSection() {
               <p className="leading-7">
                 I encourage you to actively participate in our community initiatives and share your valuable feedback as
                 we continue to work towards our shared vision of excellence.
-              </p>
+              </p> */}
+
             </div>
 
             <a href="/chairman" className="inline-flex items-center px-5 py-2.5 rounded-full border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors">

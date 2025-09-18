@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Municipal Council - Official Website",
   description:
     "Official website of the Municipal Council providing civic services, information, and community updates.",
-  generator: "v0.app",
+  generator: "nithu",
 }
 
 export default function RootLayout({

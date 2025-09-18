@@ -1,3 +1,4 @@
+"use client"
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Youtube } from "lucide-react"
 import { useLanguage } from "@/lib/i18n/context"
 

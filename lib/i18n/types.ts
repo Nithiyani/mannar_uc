@@ -14,6 +14,7 @@ export interface TranslationData {
     notices: string
     services: string
     tourism: string
+    
   }
   
   // Common
@@ -59,6 +60,8 @@ export interface TranslationData {
       name: string
       position: string
       message: string
+      paragraph1: string
+      paragraph2: string
       readFullMessage: string
     }
     services: {
@@ -97,13 +100,82 @@ export interface TranslationData {
       notices: string
     }
     contact: {
-      title: string
-      description: string
-      getInTouch: string
-      quickContact: string
-      findUs: string
-      faqs: string
+  title: string
+  description: string
+  getInTouch: string
+  quickContact: string
+  findUs: string
+  faqsTitle: string
+  faqs: {
+    question: string
+    answer: string
+  }[]
+}
+    gallery: {
+  visualShowcase: string
+  title: string
+  description: string
+  carouselView: string
+  gridView: string
+  clickToView: string
+  active: string
+  viewAllImages: string
+  seeCollection: string
+  exploreFullGallery: string
+  imageCount: string
+  ariaLabels: {
+    carousel: string
+    previous: string
+    next: string
+    goToSlide: string
+    view: string
+    viewMore: string
+    close: string
+  }
+  images: {
+    beaches: {
+      alt: string
     }
+    fort: {
+      alt: string
+    }
+    baobab: {
+      alt: string
+    }
+    lighthouse: {
+      alt: string
+    }
+    church: {
+      alt: string
+    }
+  }
+  }
+ tourism: {
+        title: string
+        description: string
+        media: {
+          title: string
+          description: string
+          moreVideos: string
+          about: {
+            title: string
+            para1: string
+            para2: string
+          }
+          travelTips: {
+            title: string
+            tip1: string
+            tip2: string
+            tip3: string
+          }
+          videos: Array<{
+            id: string
+            title: string
+            description: string
+          }>
+        }
+      }
+
   }
   
   // Footer
@@ -144,5 +216,38 @@ export interface TranslationData {
     downloadDirectory: string
     printDirectory: string
     mostContacted: string
+  }
+
+  //events page
+  // notices 
+ // Events page
+ eventsPage: {
+
+    event:Array<{
+      id: number;
+      title: string;
+      slug: string;
+      date: string;
+      time: string;
+      location: string;
+      image?: string;
+      description: string;
+    }>;
+  
+  notice: Array<{
+    id: number;
+    title: string;
+    date: string;
+    image: string;
+    description: string;
+  }>;
+
+  announcement: Array<{
+    id: number;
+    title: string;
+    date: string;
+    icon: string;
+    description: string;
+  }>;
   }
 }

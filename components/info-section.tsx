@@ -1,3 +1,4 @@
+"use client"
 import { Trash2, FileText, Bell, Globe, Users, ArrowRight, Plus } from "lucide-react"
 import { useLanguage } from "@/lib/i18n/context"
 
