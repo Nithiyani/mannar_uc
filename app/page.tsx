@@ -9,24 +9,27 @@ import { ContactSection } from "@/components/contact-section"
 import { HomeGallerySection } from "@/components/home-gallery-section"
 import { TourismMediaSection } from "@/components/tourism-media-section"
 import { Footer } from "@/components/footer"
+import { LanguageAwareWrapper } from "@/components/language-aware-wrapper"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen">
-      <TopBar />
-      <Navigation />
-      <main>
-        <HeroSection />
-        <VisionMissionSection />
-        <ChairmanSection />
-        <EventsSection />
-        <InfoSection />
-       
-        <HomeGallerySection />
-        <TourismMediaSection />
-         <ContactSection />
-      </main>
-      <Footer />
-    </div>
+    <LanguageAwareWrapper className="min-h-screen">
+      <div className="min-h-screen">
+        <TopBar />
+        <Navigation />
+        <main>
+          <HeroSection />
+          <VisionMissionSection />
+          <ChairmanSection />
+          <EventsSection />
+          <InfoSection />
+         
+          <HomeGallerySection />
+          <TourismMediaSection />
+           <ContactSection />
+        </main>
+        <Footer />
+      </div>
+    </LanguageAwareWrapper>
   )
 }

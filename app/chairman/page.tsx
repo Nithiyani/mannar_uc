@@ -4,14 +4,16 @@ import {TopBar} from "@/components/top-bar";
 import {Navigation} from "@/components/navigation";
 import {ContactSection} from "@/components/contact-section";
 import {Footer} from "@/components/footer";
+import {LanguageAwareWrapper} from "@/components/language-aware-wrapper";
 import {ArrowRight} from "lucide-react";
 import Link from "next/link";
 
 export default function ChairmanPage() {
     return (
-        <div className="min-h-screen bg-background">
-            <TopBar />
-            <Navigation />
+        <LanguageAwareWrapper className="min-h-screen bg-background">
+            <div className="min-h-screen bg-background">
+                <TopBar />
+                <Navigation />
 
             {/* Hero Section */}
             <section
@@ -226,7 +228,8 @@ export default function ChairmanPage() {
             <ContactSection />
 
             {/* Footer */}
-            <Footer />
-        </div>
+                <Footer />
+            </div>
+        </LanguageAwareWrapper>
     );
 }

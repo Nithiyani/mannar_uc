@@ -1,6 +1,7 @@
 import { TopBar } from "@/components/top-bar"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
+import { LanguageAwareWrapper } from "@/components/language-aware-wrapper"
 import { Camera, Newspaper, Megaphone, FileText, Calendar, Clock } from "lucide-react"
 
 export default function EventsPage() {
@@ -68,9 +69,10 @@ export default function EventsPage() {
   ]
 
   return (
-    <div className="min-h-screen">
-      <TopBar />
-      <Navigation />
+    <LanguageAwareWrapper className="min-h-screen">
+      <div className="min-h-screen">
+        <TopBar />
+        <Navigation />
 
       <main>
         {/* Hero Section */}
@@ -225,7 +227,8 @@ export default function EventsPage() {
         </section>
       </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </LanguageAwareWrapper>
   )
 }
