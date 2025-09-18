@@ -1,8 +1,10 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
+import { useLanguage } from "@/lib/i18n/context"
 
 export function VisionMissionSection() {
+  const { t } = useLanguage()
   const containerRef = useRef<HTMLDivElement | null>(null)
   const [inView, setInView] = useState(false)
 
@@ -33,24 +35,28 @@ export function VisionMissionSection() {
     >
       <div className="absolute inset-0 bg-black/40" />
       <div ref={containerRef} className="relative container-x text-center text-white py-16">
-        <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${inView ? "anim-fade-up" : "opacity-0 translate-y-4"}`}>Mannar Urban Council</h2>
+        <h2 className={`text-3xl md:text-4xl font-bold mb-4 ${inView ? "anim-fade-up" : "opacity-0 translate-y-4"}`}>
+          {t.footer.about}
+        </h2>
         <p className={`max-w-4xl mx-auto text-blue-100 text-lg md:text-xl mb-12 ${inView ? "anim-fade-up-delay" : "opacity-0 translate-y-4"}`}>
-          Providing leadership and coordination to achieve economic and social development goals with transparent
-          governance and public participation.
+          {t.footer.aboutDescription}
         </p>
 
         <div className="max-w-3xl mx-auto mb-10">
-          <h3 className={`text-2xl font-bold mb-2 ${inView ? "anim-fade-up" : "opacity-0 translate-y-4"}`}>Vision</h3>
+          <h3 className={`text-2xl font-bold mb-2 ${inView ? "anim-fade-up" : "opacity-0 translate-y-4"}`}>
+            {t.home.vision.title}
+          </h3>
           <p className={`text-blue-100 text-lg leading-relaxed ${inView ? "anim-fade-up-delay" : "opacity-0 translate-y-4"}`}>
-            “An independent, sovereign and prosperous Mannar.”
+            "{t.home.vision.content}"
           </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
-          <h3 className={`text-2xl font-bold mb-2 ${inView ? "anim-fade-up" : "opacity-0 translate-y-4"}`}>Mission</h3>
+          <h3 className={`text-2xl font-bold mb-2 ${inView ? "anim-fade-up" : "opacity-0 translate-y-4"}`}>
+            {t.home.mission.title}
+          </h3>
           <p className={`text-blue-100 text-lg leading-relaxed ${inView ? "anim-fade-up-delay-2" : "opacity-0 translate-y-4"}`}>
-            “To provide the leadership for an excellent municipal mechanism with good governance and effective
-            coordination between agencies to improve residents’ quality of life.”
+            "{t.home.mission.content}"
           </p>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { useState, useCallback, useRef } from "react"
 import { ChevronDown, ChevronUp, MapPin, Phone, Mail } from "lucide-react"
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api"
 import {ArrowRight} from "lucide-react"
+import { useLanguage } from "@/lib/i18n/context"
 
 const containerStyle = {
   width: '100%',
@@ -18,6 +19,7 @@ const defaultCenter = {
 }
 
 export function ContactSection() {
+  const { t } = useLanguage()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -88,20 +90,22 @@ export function ContactSection() {
   return (
     <section id="contact" className="py-16 bg-gray-50">
       <div className="container-x">
-        <h2 className="title-x text-center mb-12 text-3xl md:text-4xl font-bold text-gray-800">Contact Us</h2>
+        <h2 className="title-x text-center mb-12 text-3xl md:text-4xl font-bold text-gray-800">
+          {t.home.contact.title}
+        </h2>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Left - Contact Form Card — Match HeroSection Style */}
           <div className="bg-white rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-            <h3 className="text-2xl font-bold text-gray-800 mb-6">Get in Touch</h3>
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">{t.home.contact.getInTouch}</h3>
             <p className="text-gray-600 mb-8 leading-relaxed">
-              We’d love to hear from you. Fill out the form below and we’ll respond within 1–2 business days.
+              {t.home.contact.description}
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                  Full Name
+                  {t.contactPage.name}
                 </label>
                 <input
                   type="text"
@@ -118,7 +122,7 @@ export function ContactSection() {
 
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                  Email Address
+                  {t.contactPage.email}
                 </label>
                 <input
                   type="email"
@@ -165,7 +169,7 @@ export function ContactSection() {
                   </>
                 ) : (
                   <>
-                    Send Message
+                    {t.common.submit}
                     <ArrowRight className="w-5 h-5" />
                   </>
                 )}
@@ -177,14 +181,14 @@ export function ContactSection() {
           <div className="space-y-6">
             {/* Contact Info Card */}
             <div className="bg-white rounded-3xl shadow-xl p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Quick Contact</h3>
+              <h3 className="text-2xl font-bold text-gray-800 mb-6">{t.home.contact.quickContact}</h3>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 p-3 bg-blue-50 rounded-xl">
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">+94 11 234 5678</p>
+                    <p className="font-medium text-gray-900">{t.footer.phone}</p>
                     <p className="text-gray-600 text-sm mt-1">Mon–Fri, 8:00 AM – 4:30 PM</p>
                   </div>
                 </div>
@@ -193,7 +197,7 @@ export function ContactSection() {
                     <Mail className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">info@municipal.gov.lk</p>
+                    <p className="font-medium text-gray-900">{t.footer.email}</p>
                     <p className="text-gray-600 text-sm mt-1">We reply within 1–2 business days</p>
                   </div>
                 </div>
@@ -202,8 +206,8 @@ export function ContactSection() {
                     <MapPin className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium text-gray-900">Urban Council Mannar</p>
-                    <p className="text-gray-600 text-sm mt-1">Mannar, Sri Lanka</p>
+                    <p className="font-medium text-gray-900">{t.footer.about}</p>
+                    <p className="text-gray-600 text-sm mt-1">{t.footer.address}</p>
                   </div>
                 </div>
               </div>
@@ -214,7 +218,7 @@ export function ContactSection() {
               <div className="p-6 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white">
                 <h3 className="text-xl font-bold text-gray-800 flex items-center gap-2">
                   <MapPin className="w-5 h-5 text-primary" />
-                  Find Us On Map
+                  {t.home.contact.findUs}
                 </h3>
               </div>
               <div className="relative">
@@ -238,8 +242,8 @@ export function ContactSection() {
                   >
                     <Marker
                       position={defaultCenter}
-                      title="Urban Council Mannar Office"
-                      aria-label="Urban Council Mannar Office Location"
+                      title={t.footer.about}
+                      aria-label={`${t.footer.about} Location`}
                       icon={{
                         path: 'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z',
                         fillColor: '#001f4d',
@@ -254,7 +258,7 @@ export function ContactSection() {
                   <div className="h-full flex flex-col items-center justify-center bg-gray-50 p-8">
                     <div className="inline-block animate-pulse bg-gray-300 rounded-xl w-16 h-16 mb-4"></div>
                     <p className="text-gray-600 font-medium text-center">
-                      Loading Interactive Map...
+                      {t.common.loading}...
                     </p>
                     <p className="text-sm text-gray-500 text-center mt-2 max-w-xs">
                       Please ensure JavaScript is enabled and your API key is configured.
@@ -268,7 +272,7 @@ export function ContactSection() {
 
         {/* FAQs — Match HeroSection Spacing & Feel */}
         <div className="mt-16">
-          <h3 className="text-3xl font-bold text-primary text-center mb-12">Frequently Asked Questions</h3>
+          <h3 className="text-3xl font-bold text-primary text-center mb-12">{t.home.contact.faqs}</h3>
           <div className="max-w-4xl mx-auto space-y-4">
             {faqs.map((faq, index) => (
               <div

@@ -4,8 +4,10 @@ import { useState, useEffect, useRef } from "react"
 import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown } from "lucide-react"
 import Image from "next/image"
+import { useLanguage } from "@/lib/i18n/context"
 
 export function Navigation() {
+  const { t } = useLanguage()
   const pathname = usePathname()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
@@ -47,20 +49,20 @@ export function Navigation() {
   }
 
   const baseItems = [
-    { name: "Home", href: "/" },
-    { name: "Chairman", href: "/chairman" },
+    { name: t.nav.home, href: "/" },
+    { name: t.nav.chairman, href: "/chairman" },
   ]
 
   const eventsDropdown = [
-    { name: "Gallery", href: "/events/gallery" },
-    { name: "News", href: "/events/news" },
-    { name: "Announcements", href: "/events/announcements" },
-    { name: "Notices", href: "/events/notices" },
+    { name: t.nav.gallery, href: "/events/gallery" },
+    { name: t.nav.news, href: "/events/news" },
+    { name: t.nav.announcements, href: "/events/announcements" },
+    { name: t.nav.notices, href: "/events/notices" },
   ]
 
   const infoDropdown = [
-    { name: "Services", href: "/info/services" },
-    { name: "Tourism", href: "/info/tourism" },
+    { name: t.nav.services, href: "/info/services" },
+    { name: t.nav.tourism, href: "/info/tourism" },
    
   ]
 
@@ -120,7 +122,7 @@ export function Navigation() {
               aria-expanded={openDropdown === "events"}
               onClick={() => setOpenDropdown(openDropdown === "events" ? null : "events")}
             >
-              Events & Updates
+              {t.nav.events}
               <ChevronDown
                 className={`w-4 h-4 transition-transform ${
                   openDropdown === "events" ? "rotate-180" : "group-hover:rotate-180"
@@ -175,7 +177,7 @@ export function Navigation() {
               aria-expanded={openDropdown === "info"}
               onClick={() => setOpenDropdown(openDropdown === "info" ? null : "info")}
             >
-              Information
+              {t.nav.information}
               <ChevronDown
                 className={`w-4 h-4 transition-transform ${
                   openDropdown === "info" ? "rotate-180" : "group-hover:rotate-180"
@@ -223,7 +225,7 @@ export function Navigation() {
             }`}
             onClick={() => setOpenDropdown(null)}
           >
-            Contact Us
+            {t.nav.contact}
           </a>
         </div>
 
@@ -231,7 +233,7 @@ export function Navigation() {
         <button
           className="md:hidden p-2 text-primary"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label={t.common.menu}
         >
           {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -262,7 +264,7 @@ export function Navigation() {
                   isEventsActive ? 'bg-[#1C2B78] text-white' : 'text-primary'
                 }`}
               >
-                Events & Updates
+                {t.nav.events}
                 <span className="group-open:rotate-180 transition-transform">
                   <ChevronDown className="w-4 h-4" />
                 </span>
@@ -291,7 +293,7 @@ export function Navigation() {
                   isInfoActive ? 'bg-[#1C2B78] text-white' : 'text-primary'
                 }`}
               >
-                Information
+                {t.nav.information}
                 <span className="group-open:rotate-180 transition-transform">
                   <ChevronDown className="w-4 h-4" />
                 </span>
@@ -323,7 +325,7 @@ export function Navigation() {
               }`}
               onClick={() => setIsMenuOpen(false)}
             >
-              Contact Us
+              {t.nav.contact}
             </a>
           </div>
         </div>

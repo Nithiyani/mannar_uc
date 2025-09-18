@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
+import { LanguageProvider } from "@/lib/i18n/context"
 
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
@@ -26,8 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="font-sans antialiased">
-        <Suspense fallback={null}>{children}</Suspense>
-        <Analytics />
+        <LanguageProvider>
+          <Suspense fallback={null}>{children}</Suspense>
+          <Analytics />
+        </LanguageProvider>
       </body>
     </html>
   )
