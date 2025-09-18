@@ -2,10 +2,12 @@
 
 import { useState, useEffect } from "react"
 import { Phone, Mail, Globe } from "lucide-react"
+import { LanguageSwitcher } from "./language-switcher"
+import { useLanguage } from "@/lib/i18n/context"
 
 export function TopBar() {
+  const { t } = useLanguage()
   const [currentTime, setCurrentTime] = useState("")
-  const [language, setLanguage] = useState("English")
 
   useEffect(() => {
     const updateTime = () => {
@@ -26,7 +28,6 @@ export function TopBar() {
     return () => clearInterval(interval)
   }, [])
 
-  const languages = ["English", "සිංහල", "தமிழ்"]
 
   return (
     <div className="bg-primary text-primary-foreground">
@@ -50,19 +51,7 @@ export function TopBar() {
             </a>
           </div>
 
-          <div className="relative">
-            <button
-              className="flex items-center gap-1 hover:opacity-80 transition-opacity"
-              onClick={() => {
-                const currentIndex = languages.indexOf(language)
-                const nextIndex = (currentIndex + 1) % languages.length
-                setLanguage(languages[nextIndex])
-              }}
-            >
-              <Globe className="w-3 h-3" />
-              <span>{language}</span>
-            </button>
-          </div>
+          <LanguageSwitcher />
         </div>
       </div>
     </div>

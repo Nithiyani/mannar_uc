@@ -3,6 +3,7 @@ import React, { useState, useMemo } from "react";
 import { TopBar } from "@/components/top-bar";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { LanguageAwareWrapper } from "@/components/language-aware-wrapper";
 import {
   Search,
   Filter,
@@ -655,14 +656,15 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <style jsx global>{`
-        :root {
-          --primary: ${primaryColor};
-        }
-      `}</style>
-      <TopBar />
-      <Navigation />
+    <LanguageAwareWrapper className="min-h-screen bg-background text-foreground">
+      <div className="min-h-screen bg-background text-foreground">
+        <style jsx global>{`
+          :root {
+            --primary: ${primaryColor};
+          }
+        `}</style>
+        <TopBar />
+        <Navigation />
       {/* Toast Notification */}
       {showToast && (
         <div className="fixed top-24 right-6 z-50 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg shadow-lg flex items-center animate-fadeIn">
@@ -949,7 +951,8 @@ export default function ContactPage() {
           </div>
         </div>
       </main>
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </LanguageAwareWrapper>
   );
 }

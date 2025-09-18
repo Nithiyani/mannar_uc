@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "../styles/animations.css";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Sans+Sinhala:wght@400;500;600;700&display=swap');
 
 @custom-variant dark (&:is(.dark *));
 
@@ -157,5 +158,24 @@
 
   .btn-outline {
     @apply inline-flex items-center px-6 py-3 rounded-full border border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors;
+  }
+
+  .font-tamil {
+    font-family: 'Noto Sans Tamil', sans-serif;
+  }
+
+  .font-sinhala {
+    font-family: 'Noto Sans Sinhala', sans-serif;
+  }
+
+  /* Language-specific text sizing adjustments */
+  .font-tamil {
+    font-size: 1.05em;
+    line-height: 1.6;
+  }
+
+  .font-sinhala {
+    font-size: 1.03em;
+    line-height: 1.55;
   }
 }

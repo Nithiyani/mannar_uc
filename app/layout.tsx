@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { Suspense } from "react"
 import "./globals.css"
+import { LanguageProvider } from "@/lib/i18n/context"
 
 const inter = Inter({
   subsets: ["latin", "latin-ext"],
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   title: "Municipal Council - Official Website",
   description:
     "Official website of the Municipal Council providing civic services, information, and community updates.",
-  generator: "v0.app",
+  generator: "nithu",
 }
 
 export default function RootLayout({
@@ -26,8 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <body className="font-sans antialiased">
-        <Suspense fallback={null}>{children}</Suspense>
-        <Analytics />
+        <LanguageProvider>
+          <Suspense fallback={null}>{children}</Suspense>
+          <Analytics />
+        </LanguageProvider>
       </body>
     </html>
   )

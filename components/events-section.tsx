@@ -3,70 +3,53 @@
 import Image from "next/image"
 import { Calendar, Clock, MapPin, AlertTriangle, Megaphone, ArrowRight } from "lucide-react"
 import Link from "next/link"
-import { events } from "@/lib/data/events"
-
-// Dummy Data — Events, Notices, Announcements
-
-
-const notices = [
-  {
-    id: 1,
-    title: "Water Supply Maintenance",
-    date: "April 5, 2025",
-    image: "/mannar-lighthouse-sri-lanka-historic-maritime-land.jpg",
-    description: "Scheduled maintenance will affect water supply in Zone A from 9 AM to 3 PM.",
-  },
-  {
-    id: 2,
-    title: "Road Closure Notice",
-    date: "April 3, 2025",
-    image: "/historic-fort-mannar-sri-lanka-colonial-architectu.jpg",
-    description: "Main Street closed for repaving. Detour signs posted. Expected completion: April 10.",
-  },
-  {
-    id: 3,
-    title: "New Recycling Schedule",
-    date: "April 1, 2025",
-    image: "/baobab-trees-mannar-sri-lanka-ancient-african-tree.jpg",
-    description: "Recycling collection days updated. New bins distributed starting April 7.",
-  },
-]
-
-const announcements = [
-  {
-    id: 1,
-    title: "Chairman’s Address on Economic Growth",
-    date: "March 30, 2025",
-    icon: <Megaphone className="w-5 h-5 text-primary" />,
-    description: "Watch the Chairman’s latest address on revitalizing Mannar’s local economy.",
-  },
-  {
-    id: 2,
-    title: "Emergency Alert: Storm Preparedness",
-    date: "March 28, 2025",
-    icon: <AlertTriangle className="w-5 h-5 text-destructive" />,
-    description: "Residents advised to prepare for incoming monsoon conditions. Emergency kits available.",
-  },
-  {
-    id: 3,
-    title: "New Public Transport Routes Announced",
-    date: "March 25, 2025",
-    icon: <MapPin className="w-5 h-5 text-primary" />,
-    description: "Three new bus routes to improve connectivity across Mannar Island starting May 1.",
-  },
-]
+// import { events } from "@/lib/data/events"
+import { useLanguage } from "@/lib/i18n/context"
+import { translations } from "@/lib/i18n/translations"
 
 export function EventsSection() {
+  const { t, language } = useLanguage()
+  
+  // Get translated notices and announcements
+  const notices = translations[language].eventsPage.notice
+   const announcements = translations[language].eventsPage.announcement
+  const events = translations[language].eventsPage.event
+
+
+//   const announcements = [
+//   {
+//     id: 1,
+//     title: "Chairman’s Address on Economic Growth",
+//     date: "March 30, 2025",
+//     icon: <Megaphone className="w-5 h-5 text-primary" />,
+//     description: "Watch the Chairman’s latest address on revitalizing Mannar’s local economy.",
+//   },
+//   {
+//     id: 2,
+//     title: "Emergency Alert: Storm Preparedness",
+//     date: "March 28, 2025",
+//     icon: <AlertTriangle className="w-5 h-5 text-destructive" />,
+//     description: "Residents advised to prepare for incoming monsoon conditions. Emergency kits available.",
+//   },
+//   {
+//     id: 3,
+//     title: "New Public Transport Routes Announced",
+//     date: "March 25, 2025",
+//     icon: <MapPin className="w-5 h-5 text-primary" />,
+//     description: "Three new bus routes to improve connectivity across Mannar Island starting May 1.",
+//   },
+// ]
+
   return (
     <section id="events" className="section-x py-16 bg-gradient-to-b from-white to-blue-50">
       <div className="container-x">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4">
-            Events & Updates
+            {t.home.events.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Stay informed about upcoming events, public notices, and official announcements from Mannar Urban Council.
+            {t.home.events.description}
           </p>
         </div>
 
@@ -112,7 +95,7 @@ export function EventsSection() {
                       {event.description}
                     </p>
                     <div className="flex items-center text-primary font-medium text-sm hover:underline underline-offset-4 transition-all group-hover:gap-2">
-                      Learn More
+                      {t.common.learnMore}
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
@@ -126,10 +109,7 @@ export function EventsSection() {
             {/* Announcements Panel */}
             <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
               <div className="flex items-center gap-2 mb-4">
-                {/* <div className="w-8 h-8 bg-primary text-primary-foreground rounded-lg flex items-center justify-center">
-                  <Megaphone className="w-4 h-4" />
-                </div> */}
-                <h3 className="text-lg font-bold text-primary">ANNOUNCEMENTS</h3>
+                <h3 className="text-lg font-bold text-primary">{t.home.events.announcements}</h3>
               </div>
               <div className="space-y-4">
                 {announcements.map((item) => (
@@ -137,7 +117,15 @@ export function EventsSection() {
                     key={item.id}
                     className="flex gap-3 pb-4 border-b border-gray-100 last:border-b-0 last:pb-0 group"
                   >
-                    <div className="flex-shrink-0 pt-1">{item.icon}</div>
+                    <div className="flex-shrink-0 pt-1">
+                      {item.icon === "megaphone" ? (
+                        <Megaphone className="w-5 h-5 text-primary" />
+                      ) : item.icon === "alert" ? (
+                        <AlertTriangle className="w-5 h-5 text-destructive" />
+                      ) : (
+                        <MapPin className="w-5 h-5 text-primary" />
+                      )}
+                    </div>
                     <div className="flex-1 min-w-0">
                       <h4 className="font-semibold text-gray-800 text-sm mb-1 group-hover:text-primary transition-colors">
                         {item.title}
@@ -155,7 +143,7 @@ export function EventsSection() {
                   href="/events/announcements"
                   className="inline-flex items-center text-primary font-medium text-sm hover:gap-1 transition-all"
                 >
-                  View All Announcements
+                  {t.common.viewAll} {t.nav.announcements}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -164,10 +152,7 @@ export function EventsSection() {
             {/* Notices Panel */}
             <div className="bg-white rounded-2xl shadow-lg p-6 border border-gray-100">
               <div className="flex items-center gap-2 mb-4">
-                {/* <div className="w-8 h-8 bg-primary text-primary-foreground rounded-lg flex items-center justify-center">
-                  <AlertTriangle className="w-4 h-4" />
-                </div> */}
-                <h3 className="text-lg font-bold text-primary">NOTICES</h3>
+                <h3 className="text-lg font-bold text-primary">{t.home.events.notices}</h3>
               </div>
               <div className="space-y-4">
                 {notices.map((notice) => (
@@ -201,7 +186,7 @@ export function EventsSection() {
                   href="/events/notices"
                   className="inline-flex items-center text-primary font-medium text-sm hover:gap-1 transition-all"
                 >
-                  View All Notices
+                  {t.common.viewAll} {t.nav.notices}
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -215,7 +200,7 @@ export function EventsSection() {
             href="/events"
             className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/90 transition-all shadow-md hover:shadow-lg"
           >
-            View All Events & Updates
+            {t.common.viewAll} {t.nav.events}
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

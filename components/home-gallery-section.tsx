@@ -3,21 +3,28 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import { ChevronLeft, ChevronRight, X, ZoomIn, Grid3X3 } from "lucide-react"
+import { useLanguage } from "@/lib/i18n/context"
+import { translations } from "@/lib/i18n/translations"
 
 export function HomeGallerySection() {
+  const { t, language } = useLanguage()
+  
+  // Get translated content
+  const galleryContent = translations[language].home.gallery
+  
   const mainImages = [
-    { src: "/mannar-island-beaches-sri-lanka-pristine-coastline.jpg", alt: "Mannar Island Beaches" },
-    { src: "/historic-fort-mannar-sri-lanka-colonial-architectu.jpg", alt: "Mannar Fort" },
-    { src: "/baobab-trees-mannar-sri-lanka-ancient-african-tree.jpg", alt: "Baobab Trees" },
-    { src: "/mannar-lighthouse-sri-lanka-historic-maritime-land.jpg", alt: "Mannar Lighthouse" },
-    { src: "/st-sebastian-church-mannar-catholic-colonial-archi.jpg", alt: "St. Sebastian's Church" },
-    { src: "/historic-fort-mannar-sri-lanka-colonial-architectu.jpg", alt: "Mannar Fort" },
-    { src: "/baobab-trees-mannar-sri-lanka-ancient-african-tree.jpg", alt: "Baobab Trees" },
-    { src: "/mannar-lighthouse-sri-lanka-historic-maritime-land.jpg", alt: "Mannar Lighthouse" },
-    { src: "/st-sebastian-church-mannar-catholic-colonial-archi.jpg", alt: "St. Sebastian's Church" },
-    { src: "/mannar-island-beaches-sri-lanka-pristine-coastline.jpg", alt: "Mannar Island Beaches" },
-    { src: "/historic-fort-mannar-sri-lanka-colonial-architectu.jpg", alt: "Mannar Fort" },
-    { src: "/baobab-trees-mannar-sri-lanka-ancient-african-tree.jpg", alt: "Baobab Trees" },
+    { src: "/mannar-island-beaches-sri-lanka-pristine-coastline.jpg", alt: galleryContent.images.beaches.alt },
+    { src: "/historic-fort-mannar-sri-lanka-colonial-architectu.jpg", alt: galleryContent.images.fort.alt },
+    { src: "/baobab-trees-mannar-sri-lanka-ancient-african-tree.jpg", alt: galleryContent.images.baobab.alt },
+    { src: "/mannar-lighthouse-sri-lanka-historic-maritime-land.jpg", alt: galleryContent.images.lighthouse.alt },
+    { src: "/st-sebastian-church-mannar-catholic-colonial-archi.jpg", alt: galleryContent.images.church.alt },
+    { src: "/historic-fort-mannar-sri-lanka-colonial-architectu.jpg", alt: galleryContent.images.fort.alt },
+    { src: "/baobab-trees-mannar-sri-lanka-ancient-african-tree.jpg", alt: galleryContent.images.baobab.alt },
+    { src: "/mannar-lighthouse-sri-lanka-historic-maritime-land.jpg", alt: galleryContent.images.lighthouse.alt },
+    { src: "/st-sebastian-church-mannar-catholic-colonial-archi.jpg", alt: galleryContent.images.church.alt },
+    { src: "/mannar-island-beaches-sri-lanka-pristine-coastline.jpg", alt: galleryContent.images.beaches.alt },
+    { src: "/historic-fort-mannar-sri-lanka-colonial-architectu.jpg", alt: galleryContent.images.fort.alt },
+    { src: "/baobab-trees-mannar-sri-lanka-ancient-african-tree.jpg", alt: galleryContent.images.baobab.alt },
   ]
 
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -96,13 +103,13 @@ export function HomeGallerySection() {
           <div className="text-center mb-12 animate-fade-in-up">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 text-primary font-medium mb-4">
               <Grid3X3 size={18} className="mr-2" />
-              Visual Showcase
+              {galleryContent.visualShowcase}
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Explore Our Gallery
+              {galleryContent.title}
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Discover the beauty and heritage of Mannar through our curated collection of images
+              {galleryContent.description}
             </p>
           </div>
 
@@ -117,7 +124,7 @@ export function HomeGallerySection() {
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                Carousel View
+                {galleryContent.carouselView}
               </button>
               <button
                 onClick={() => setViewMode('grid')}
@@ -127,7 +134,7 @@ export function HomeGallerySection() {
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
-                Grid View
+                {galleryContent.gridView}
               </button>
             </div>
           </div>
@@ -139,7 +146,7 @@ export function HomeGallerySection() {
                 className="relative md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden shadow-2xl aspect-[16/10] md:aspect-[4/3] group cursor-pointer"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
-                aria-label="Image gallery carousel"
+                aria-label={galleryContent.ariaLabels.carousel}
                 onClick={() => openLightbox(currentIndex)}
               >
                 {/* Current Image */}
@@ -173,7 +180,7 @@ export function HomeGallerySection() {
                     <h3 className="text-white text-xl font-semibold mb-2">
                       {mainImages[currentIndex].alt}
                     </h3>
-                    <p className="text-gray-200">Click to view full size</p>
+                    <p className="text-gray-200">{galleryContent.clickToView}</p>
                   </div>
                 </div>
 
@@ -185,7 +192,7 @@ export function HomeGallerySection() {
                 {/* Navigation Arrows */}
                 <button
                   onClick={(e) => { e.stopPropagation(); prevSlide(); }}
-                  aria-label="Previous image"
+                  aria-label={galleryContent.ariaLabels.previous}
                   className="absolute top-1/2 left-6 -translate-y-1/2 bg-white/10 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110 border border-white/20 shadow-lg z-30 opacity-0 group-hover:opacity-100"
                 >
                   <ChevronLeft size={24} className="text-white" />
@@ -193,7 +200,7 @@ export function HomeGallerySection() {
 
                 <button
                   onClick={(e) => { e.stopPropagation(); nextSlide(); }}
-                  aria-label="Next image"
+                  aria-label={galleryContent.ariaLabels.next}
                   className="absolute top-1/2 right-6 -translate-y-1/2 bg-white/10 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/20 transition-all duration-300 transform hover:scale-110 border border-white/20 shadow-lg z-30 opacity-0 group-hover:opacity-100"
                 >
                   <ChevronRight size={24} className="text-white" />
@@ -211,7 +218,7 @@ export function HomeGallerySection() {
                           setTimeout(() => setCurrentIndex(idx), 700);
                         }
                       }}
-                      aria-label={`Go to slide ${idx + 1}`}
+                      aria-label={`${galleryContent.ariaLabels.goToSlide} ${idx + 1}`}
                       className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                         idx === currentIndex || idx === nextIndex
                           ? "bg-white scale-125"
@@ -232,7 +239,7 @@ export function HomeGallerySection() {
                 {displayedThumbnails.map((img, i) => (
                   <div
                     key={i}
-                    className={`relative rounded-2xl overflow-hidden aspect-square shadow-md cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-xl border-2 transition-colors animate-fade-in-up group ${
+                    className={`relative rounded-2xl overflow-hidden aspect-square shadow-md cursor-pointer transform  duration-500 hover:scale-105 hover:shadow-xl border-2 transition-colors animate-fade-in-up group ${
                       i === currentIndex
                         ? "border-primary/60 scale-105 shadow-lg ring-2 ring-primary/20"
                         : "border-transparent hover:border-primary/30"
@@ -243,7 +250,7 @@ export function HomeGallerySection() {
                       setNextIndex(i);
                       setTimeout(() => setCurrentIndex(i), 700);
                     }}
-                    aria-label={`View ${img.alt}`}
+                    aria-label={`${galleryContent.ariaLabels.view} ${img.alt}`}
                   >
                     <Image
                       src={img.src}
@@ -259,29 +266,27 @@ export function HomeGallerySection() {
                     
                     {i === currentIndex && (
                       <div className="absolute top-2 right-2 bg-primary text-white text-xs px-2 py-1 rounded-full font-medium shadow-md">
-                        Active
+                        {galleryContent.active}
                       </div>
                     )}
                   </div>
                 ))}
                 
-              
                 {/* {!showAllThumbnails && allThumbnails.length > 5 && (
                   <div
                     className="relative rounded-2xl overflow-hidden aspect-square shadow-md cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-xl border-2 border-dashed border-gray-300 hover:border-primary/40 flex flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 animate-fade-in-up group"
                     style={{ animationDelay: `${displayedThumbnails.length * 0.1}s` }}
                     onClick={() => setShowAllThumbnails(true)}
-                    aria-label="View more images"
+                    aria-label={galleryContent.ariaLabels.viewMore}
                   >
                     <div className="text-center p-4 transform transition-transform duration-300 group-hover:scale-110">
                       <div className="bg-primary/10 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3">
                         <span className="text-primary font-bold text-2xl">+{allThumbnails.length - 5}</span>
                       </div>
-                      <div className="text-gray-700 font-medium mb-1">View All Images</div>
-                      <div className="text-gray-500 text-sm">See our complete collection</div>
+                      <div className="text-gray-700 font-medium mb-1">{galleryContent.viewAllImages}</div>
+                      <div className="text-gray-500 text-sm">{galleryContent.seeCollection}</div>
                     </div>
                     
-                   
                     <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:translate-x-full transition-transform duration-1000" />
                   </div>
                 )} */}
@@ -296,7 +301,7 @@ export function HomeGallerySection() {
                   className="relative rounded-2xl overflow-hidden aspect-square shadow-md cursor-pointer transform transition-all duration-500 hover:scale-105 hover:shadow-xl border-2 border-transparent hover:border-primary/30 group animate-fade-in-up"
                   style={{ animationDelay: `${i * 0.05}s` }}
                   onClick={() => openLightbox(i)}
-                  aria-label={`View ${img.alt}`}
+                  aria-label={`${galleryContent.ariaLabels.view} ${img.alt}`}
                 >
                   <Image
                     src={img.src}
@@ -327,7 +332,7 @@ export function HomeGallerySection() {
               href="/events/gallery"
               className="inline-flex items-center px-8 py-4 rounded-full bg-primary text-white font-medium text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
             >
-              Explore Full Gallery
+              {galleryContent.exploreFullGallery}
               <ChevronRight size={20} className="ml-2 group-hover:translate-x-1 transition-transform" />
             </a>
           </div>
@@ -340,7 +345,7 @@ export function HomeGallerySection() {
           <button
             onClick={closeLightbox}
             className="absolute top-6 right-6 text-white p-2 rounded-full bg-black/50 hover:bg-black/70 transition-colors duration-300 z-60"
-            aria-label="Close lightbox"
+            aria-label={galleryContent.ariaLabels.close}
           >
             <X size={28} />
           </button>
@@ -348,7 +353,7 @@ export function HomeGallerySection() {
           <button
             onClick={() => navigateLightbox('prev')}
             className="absolute left-6 top-1/2 -translate-y-1/2 text-white p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors duration-300 z-60"
-            aria-label="Previous image"
+            aria-label={galleryContent.ariaLabels.previous}
           >
             <ChevronLeft size={32} />
           </button>
@@ -356,7 +361,7 @@ export function HomeGallerySection() {
           <button
             onClick={() => navigateLightbox('next')}
             className="absolute right-6 top-1/2 -translate-y-1/2 text-white p-3 rounded-full bg-black/50 hover:bg-black/70 transition-colors duration-300 z-60"
-            aria-label="Next image"
+            aria-label={galleryContent.ariaLabels.next}
           >
             <ChevronRight size={32} />
           </button>
@@ -372,7 +377,11 @@ export function HomeGallerySection() {
           
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white text-center z-60">
             <h3 className="text-xl font-semibold mb-1">{mainImages[lightboxIndex].alt}</h3>
-            <p className="text-gray-300">Image {lightboxIndex + 1} of {mainImages.length}</p>
+            <p className="text-gray-300">
+              {galleryContent.imageCount
+                .replace('{current}', (lightboxIndex + 1).toString())
+                .replace('{total}', mainImages.length.toString())}
+            </p>
           </div>
         </div>
       )}

@@ -64,7 +64,7 @@ export default function AnnouncementsPage() {
       category: "Meeting",
       priority: "normal",
       validUntil: "2024-01-20",
-      description: "Public consultation meeting for the 2024 municipal budget will be held on January 20 at 3:00 PM in the Council Chambers. All residents are invited to participate.",
+      description: "Public consultation meeting for the 2025municipal budget will be held on January 20 at 3:00 PM in the Council Chambers. All residents are invited to participate.",
       affectedAreas: ["All Wards"],
       contactInfo: "Council Secretary: +94 23 223 5678",
       participants: "All residents",
