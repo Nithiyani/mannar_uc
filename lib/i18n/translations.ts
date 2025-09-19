@@ -198,29 +198,29 @@ export const translations: Record<string, TranslationData> = {
           },
           videos: [
             {
-          id: "YWCMA2G22A8", // <-- YouTube ID
-          title: "Mannar Sri Lanka - Exploring the Hidden Gem",
-          description:
-            "Discover the untouched beauty of Mannar with its pristine beaches, historic sites, and unique wildlife in this comprehensive tour.",
-        },
-        {
-          id: "qRcIv8PJTG8", // <-- YouTube ID
-          title: "Discover Mannar - Sri Lanka's Untouched Paradise",
-          description:
-            "Experience the serene landscapes and rich cultural heritage that make Mannar a truly special destination in Sri Lanka.",
-        },
-        {
-          id: "tL2qrDNBLzQ", // <-- YouTube ID
-          title: "Mannar Island - Cultural Heritage & Natural Beauty",
-          description:
-            "Explore the fascinating blend of Tamil and colonial influences alongside breathtaking natural attractions on Mannar Island.",
-        },
-        {
-          id: "LRAL62axdmE", // <-- YouTube ID
-          title: "Mannar Tourism - Beaches, History & Wildlife",
-          description:
-            "From the famous Baobab trees to migratory bird watching, Mannar offers diverse experiences for every type of traveler.",
-        },
+              id: "YWCMA2G22A8", // <-- YouTube ID
+              title: "Mannar Sri Lanka - Exploring the Hidden Gem",
+              description:
+                "Discover the untouched beauty of Mannar with its pristine beaches, historic sites, and unique wildlife in this comprehensive tour.",
+            },
+            {
+              id: "qRcIv8PJTG8", // <-- YouTube ID
+              title: "Discover Mannar - Sri Lanka's Untouched Paradise",
+              description:
+                "Experience the serene landscapes and rich cultural heritage that make Mannar a truly special destination in Sri Lanka.",
+            },
+            {
+              id: "tL2qrDNBLzQ", // <-- YouTube ID
+              title: "Mannar Island - Cultural Heritage & Natural Beauty",
+              description:
+                "Explore the fascinating blend of Tamil and colonial influences alongside breathtaking natural attractions on Mannar Island.",
+            },
+            {
+              id: "LRAL62axdmE", // <-- YouTube ID
+              title: "Mannar Tourism - Beaches, History & Wildlife",
+              description:
+                "From the famous Baobab trees to migratory bird watching, Mannar offers diverse experiences for every type of traveler.",
+            },
           ],
         },
       }
@@ -238,30 +238,31 @@ export const translations: Record<string, TranslationData> = {
       builtWith: "Built with dedication for our community",
     },
     contactPage: {
-      title: "සම්බන්ධතා නාමාවලිය",
-      description: "මන්නාර නගර සභාවේ නිවැරදි සම්බන්ධතාව ඉක්මනින් සහ කාර්යක්ෂමව සොයා ගන්න.",
-      directory: "සම්බන්ධතා නාමාවලිය",
-      name: "නම",
-      position: "තනතුර",
-      telephone: "දුරකථනය",
-      fax: "ෆැක්ස්",
-      email: "ඊමේල්",
-      division: "අංශය",
-      searchPlaceholder: "නම, තනතුර, දුරකථනය හෝ ඊමේල් අනුව සොයන්න...",
-      filterByDivision: "අංශය අනුව පෙරහන",
-      allDivisions: "සියලුම අංශ",
-      export: "නිර්යාත",
-      copy: "පිටපත්",
-      directoryInfo: "නාමාවලි තොරතුරු",
-      totalDivisions: "මුළු අංශ",
-      totalContacts: "මුළු සම්බන්ධතා",
-      lastUpdated: "අවසන් යාවත්කාලීන",
-      quickActions: "ඉක්මන් ක්‍රියා",
-      emailMainOffice: "ප්‍රධාන කාර්යාලයට ඊමේල්",
-      downloadDirectory: "නාමාවලිය බාගන්න",
-      printDirectory: "නාමාවලිය මුද්‍රණය",
-      mostContacted: "වැඩිපුරම සම්බන්ධ වූ",
-    },
+      title: "Contact Directory",
+      description: "Quickly and efficiently find the right contact at the Mannar Municipal Council.",
+      directory: "Contact Directory",
+      name: "Name",
+      position: "Position",
+      telephone: "Telephone",
+      fax: "Fax",
+      email: "Email",
+      division: "Division",
+      searchPlaceholder: "Search by name, position, telephone, or email...",
+      filterByDivision: "Filter by Division",
+      allDivisions: "All Divisions",
+      export: "Export",
+      copy: "Copy",
+      directoryInfo: "Directory Information",
+      totalDivisions: "Total Divisions",
+      totalContacts: "Total Contacts",
+      lastUpdated: "Last Updated",
+      quickActions: "Quick Actions",
+      emailMainOffice: "Email Main Office",
+      downloadDirectory: "Download Directory",
+      printDirectory: "Print Directory",
+      mostContacted: "Most Contacted",
+    }
+    ,
     eventsPage: {
       event: [
         {
@@ -356,7 +357,102 @@ export const translations: Record<string, TranslationData> = {
         },
       ],
     },
+   ChairmanPage : {
+  hero: {
+    name: "Balen Shah",
+    description: "Engineer, Rapper, and Mayor of Kathmandu. Champion of urban reform and transparent governance.",
+    cta: "Get Involved"
   },
+  whoIsBalen: {
+    title: "Who is Balen?",
+    paragraphs: [
+      "Balen Shah (Balendra Shah) is a prominent figure in Nepal, known for his roles as an engineer, rapper, and politician. He gained widespread recognition as an independent candidate and was elected the mayor of Kathmandu in May 2022. His unexpected victory, without the backing of any political party, was a landmark event in Nepalese politics, signaling a shift towards more independent leadership.",
+      "Before entering politics, Balen was already well-known in Nepal's hip-hop community as a rapper and lyricist. He is also a civil engineer by profession. As mayor, he has been vocal about issues like urban planning, waste management, and corruption, and has earned praise for his straightforward approach to addressing challenges in the capital city.",
+      "Balen has also become a polarizing figure due to his unconventional style of governance and willingness to challenge the status quo, which has sparked both admiration and criticism."
+    ]
+  },
+  academics: {
+    title: "Academics & Qualifications",
+    imageAlt: "Balen Shah - Engineer and Politician",
+    qualifications: [
+      {
+        degree: "Master of Science (Mechanical Engineering, Production Technology)",
+        institution: "Magdeburg Technical School & Otto-Von-Guericke University Magdeburg, Germany"
+      },
+      {
+        degree: "Certificate in Senior Management",
+        institution: "Kenya Institute of Management, Kenya"
+      },
+      {
+        degree: "Certificate in Standardization & Quality Control",
+        institution: "University of Denver, Colorado, USA"
+      },
+      {
+        degree: "Certificate in Establishment of Natural Physical Standards",
+        institution: "National Bureau of Standards & Technology, Gaithersburg, MD, USA"
+      },
+      {
+        degree: "Certificate in Standards Specification Writing",
+        institution: "British Standards Institution (BSI Group)"
+      }
+    ]
+  },
+  awards: {
+    title: "Honours, Awards & Publications",
+    imageAlt: "Balen Shah's awards and publications",
+    items: [
+      {
+        title: "Greater Good Award",
+        details: "Mazari Africa, Istanbul, Kenya, May 2021"
+      },
+      {
+        title: "Doctor Of Sciences (Honoris Causa)",
+        details: "Jurumegh Opriga Obriga University of Science & Technology, Siyap, Kenya, December 2010"
+      },
+      {
+        title: "The Quest For Nationhood Roadmap To Our Future",
+        details: "Nairobi Mountainsho Publishers, 2017"
+      },
+      {
+        title: "The Flame of Freedom",
+        details: "Nairobi Mountainsho Publishers, 2019"
+      },
+      {
+        title: "Doctorate of Leadership in Social Development (Honoris Causa)",
+        details: "Lambalong University of Creative Technology, Kuala Lumpur, July 2012"
+      },
+      {
+        title: "Honorary Doctorate",
+        details: "Florida Agricultural Mechanical University, USA, 2009"
+      },
+      {
+        title: "Doctor of Laws (LLD) (Honoris Causa)",
+        details: "The University of Nairobi, Kenya, October 2008"
+      }
+    ]
+  },
+  leadership: {
+    title: "Leadership & Impact",
+    mayorSection: {
+      title: "As Mayor of Kathmandu",
+      description: "Since being elected in 2022, Balen Shah has focused on critical urban issues including:",
+      initiatives: [
+        "Urban planning and development",
+        "Waste management solutions",
+        "Anti-corruption initiatives",
+        "Infrastructure improvement",
+        "Cultural preservation"
+      ]
+    },
+    cultureSection: {
+      title: "Cultural Influence",
+      description: "Before entering politics, Balen was already well-known in Nepal's hip-hop community as a rapper and lyricist. His music often addresses social issues, which aligns with his political approach of challenging the status quo and advocating for transparency.",
+      quote: "Balen has become a polarizing figure due to his unconventional style of governance and willingness to challenge established systems, sparking both admiration and criticism."
+    }
+  }
+
+  },
+},
 
   ta: {
     nav: {
@@ -718,7 +814,105 @@ export const translations: Record<string, TranslationData> = {
         },
       ],
     },
+
+    ChairmanPage: {
+  hero: {
+    name: "பாலென் ஷா",
+    description: "இன்ஜினீயர், ராப்பர் மற்றும் காத்த்மாண்டு மேயர். நகர அபிவிருத்தி மற்றும் திறந்த நிர்வாகத்தின் முன்னோடி.",
+    cta: "பங்கேற்கவும்"
   },
+  whoIsBalen: {
+    title: "பாலென் யார்?",
+    paragraphs: [
+      "பாலென் ஷா (பாலென்றா ஷா) நேபாளில் ஒரு புகழ்பெற்ற நபர், இன்ஜினீயர், ராப்பர் மற்றும் அரசியல்வாதியாகப் பரிச்சயமானவர். அவர் சுதந்திர வேட்பாளராக வெற்றி பெற்றபோது, 2022 மே மாதத்தில் காத்த்மாண்டு மேயராக தேர்வாயினர். எந்த அரசியல் கட்சியின் ஆதரவும் இல்லாமல் வந்த இந்த எதிர்பாராத வெற்றி, நேபாள அரசியலில் ஒரு முக்கியமான நிகழ்வாகும், சுயாதீன தலைமையின் மாற்றத்தை வெளிப்படுத்தியது.",
+      "அரசியலில் நுழைந்ததற்கு முன், பாலென் நேபாள ஹிப்-ஹாப் சமூகத்தில் ராப்பர் மற்றும் கவிஞராகப் பிரபலமாக இருந்தார். அவர் ஒரு சிவில் இன்ஜினீயராகவும் உள்ளார். மேயராக இருக்கையில், நகர திட்டமிடல், கழிவு மேலாண்மை மற்றும் ஊழல் போன்ற பிரச்சினைகள் தொடர்பில் அவர் வெளிப்படையாக கருத்து கூறியுள்ளார்.",
+      "பாலென் அவரது வழக்கத்திற்கு மாறான நிர்வாக பாணியாலும் நிலையான முறைகளுக்கு எதிராக முன்வந்ததாலும், புகழும் விமர்சனமும் இரண்டும் பெற்றுள்ளார்."
+    ]
+  },
+  academics: {
+    title: "கல்வி & தகுதிகள்",
+    imageAlt: "பாலென் ஷா - இன்ஜினீயர் மற்றும் அரசியல்வாதி",
+    qualifications: [
+      {
+        degree: "மெக்கானிக்கல் இன்ஜினீயரிங், தயாரிப்பு தொழில்நுட்பம் - எம்.எஸ்.",
+        institution: "Magdeburg தொழில்நுட்ப பள்ளி & Otto-Von-Guericke பல்கலைக்கழகம், ஜெர்மனி"
+      },
+      {
+        degree: "சீனியர் மேலாண்மை சான்றிதழ்",
+        institution: "Kenya மேலாண்மை நிறுவனம், கென்யா"
+      },
+      {
+        degree: "தரநிலை & தர கட்டுப்பாடு சான்றிதழ்",
+        institution: "University of Denver, கொலராடோ, அமெரிக்கா"
+      },
+      {
+        degree: "இயற்கை உடல் தரநிலைகள் நிறுவல் சான்றிதழ்",
+        institution: "National Bureau of Standards & Technology, Gaithersburg, MD, USA"
+      },
+      {
+        degree: "தர விவரக்குறிப்பு எழுதும் சான்றிதழ்",
+        institution: "British Standards Institution (BSI Group)"
+      }
+    ]
+  },
+  awards: {
+    title: "பட்டங்கள், விருதுகள் & பதிப்புரைகள்",
+    imageAlt: "பாலென் ஷாவின் விருதுகள் மற்றும் பதிப்புரைகள்",
+    items: [
+      {
+        title: "மிகச்சிறந்த நன்மை விருது",
+        details: "Mazari Africa, Istanbul, கென்யா, மே 2021"
+      },
+      {
+        title: "அறிவியல் டாக்டர் (மாண்புமிகு) (Honoris Causa)",
+        details: "Jurumegh Opriga Obriga University of Science & Technology, Siyap, கென்யா, டிசம்பர் 2010"
+      },
+      {
+        title: "தேசியத்தின் பாதை: எங்கள் எதிர்கால திட்டம்",
+        details: "Nairobi Mountainsho Publishers, 2017"
+      },
+      {
+        title: "சுதந்திரத்தின் தீ",
+        details: "Nairobi Mountainsho Publishers, 2019"
+      },
+      {
+        title: "சமூக மேம்பாட்டில் தலைமைக் கல்வி டாக்டர் (Honoris Causa)",
+        details: "Lambalong University of Creative Technology, குவாலாலம்பூர், ஜூலை 2012"
+      },
+      {
+        title: "கௌரவ பட்டம்",
+        details: "Florida Agricultural Mechanical University, USA, 2009"
+      },
+      {
+        title: "சட்டங்களில் டாக்டர் (LLD) (Honoris Causa)",
+        details: "The University of Nairobi, கென்யா, அக்டோபர் 2008"
+      }
+    ]
+  },
+  leadership: {
+    title: "நிர்வாகம் & தாக்கம்",
+    mayorSection: {
+      title: "காத்த்மாண்டு மேயராக",
+      description: "2022ல் தேர்வாய்ந்தபின்னர், பாலென் ஷா முக்கிய நகர பிரச்சினைகளில் கவனம் செலுத்தியுள்ளார்:",
+      initiatives: [
+        "நகர திட்டமிடல் மற்றும் அபிவிருத்தி",
+        "கழிவு மேலாண்மை தீர்வுகள்",
+        "ஊழல் எதிர்ப்பு முயற்சிகள்",
+        "அமைப்பு மேம்பாடு",
+        "கலை மற்றும் பண்பாட்டு பாதுகாப்பு"
+      ]
+    },
+    cultureSection: {
+      title: "பண்பாட்டு தாக்கம்",
+      description: "அரசியலில் நுழைந்ததற்கு முன், பாலென் நேபாள ஹிப்-ஹாப் சமூகத்தில் ராப்பர் மற்றும் கவிஞராக பிரபலமாக இருந்தார். அவரது இசை சமூக பிரச்சினைகளை அடிக்கடி உரைக்கும், இது அரசியல் முறையின் வெளிப்படையான அணுகுமுறையுடன் இணைக்கப்பட்டுள்ளது.",
+      quote: "பாலென் அவரது வழக்கத்திற்கு மாறான நிர்வாக பாணியால் மற்றும் நிலையான முறைகளை சவால் செய்வதில் முன்வந்ததனால், புகழும் விமர்சனமும் இரண்டும் பெற்றுள்ளார்."
+    }
+  }
+    },
+
+ 
+
+},
 
   si: {
     nav: {
@@ -1069,5 +1263,109 @@ export const translations: Record<string, TranslationData> = {
         },
       ],
     },
+    ChairmanPage: {
+  hero: {
+    name: "බාලෙන් ෂා",
+    description: "ඉංජිනේරු, රැප් ගායකයෙකු සහ කට්මණ්ඩු නගරයේ මහමැති. නගර සංවර්ධනය සහ විවෘත පාලනය පිළිබඳ පුරෝගාමී.",
+    cta: "ඇතුළු වන්න"
   },
+  whoIsBalen: {
+    title: "බාලෙන් කවුරුද?",
+    paragraphs: [
+      "බාලෙන් ෂා (බාලෙන්ද්‍ර ෂා) නෙපාලයේ ප්‍රසිද්ධ පුද්ගලයෙකි, ඉංජිනේරු, රැප් ගායක සහ රාජ්‍ය නිලධාරියා ලෙස හැඳින්වෙයි. ඔහු ස්වාධීන අපේක්ෂකයෙකු ලෙස ජනප්‍රියත්වය ලැබූ අතර 2022 මැයි මාසයේ කට්මණ්ඩු නගරයේ මහමැති ලෙස විභාගයට ලක්විය. ඕනෑම දේශපාලන පක්ෂයක ආධාරයක් නොමැතිව ලැබූ මේ අනපේක්ෂිත ජයග්‍රහණය නෙපාල රාජ්‍ය විද්‍යාවේ ලක්ෂ්‍යමය සිදුවීමක් වන අතර ස්වාධීන නායකත්වයට පිවිසීමේ මාර්ගයක් සලසයි.",
+      "රාජ්‍ය සේවයට පිවිසීමට පෙර, බාලෙන් නෙපාලයේ හිප්-හොප් සමාජයේ ප්‍රසිද්ධ රැප් ගායකයෙකු සහ ගායන ලේඛකයෙකු ලෙස නම් දායකව තිබුණි. ඔහු පුරවැසි ඉංජිනේරුවරයෙකු ලෙසද කටයුතු කරයි. මහමැති ලෙස, නගර සැලසුම් කිරීම, අපද්‍රව්‍ය කළමනාකරණය සහ අධිෂ්ඨානික කටයුතු පිළිබඳව ඔහු විවෘතව කතා කරමින් ඇත.",
+      "ඔහුගේ අමුතු පාලන රීතිය සහ සම්ප්‍රදායික ක්‍රමවලට අභියෝග දැක්වීම නිසා බාලෙන් අගය හා විවේචන දෙකටම ලක්වී ඇත."
+    ]
+  },
+  academics: {
+    title: "අධ්‍යාපන සහ සුදුසුකම්",
+    imageAlt: "බාලෙන් ෂා - ඉංජිනේරු සහ රාජ්‍ය නිලධාරියා",
+    qualifications: [
+      {
+        degree: "සංයුක්ත විද්‍යාත්මක පීඨය (මැකැනිකල් ඉංජිනේරු, නිෂ්පාදන තාක්ෂණය)",
+        institution: "Magdeburg තාක්ෂණ පාසල සහ Otto-Von-Guericke විශ්ව විද්‍යාලය, ජර්මනිය"
+      },
+      {
+        degree: "ජ්‍යේෂ්ඨ කළමනාකරණ සහතිකය",
+        institution: "Kenya කළමනාකරණ ආයතනය, කෙන්යා"
+      },
+      {
+        degree: "සම්මතීකරණ සහ ගුණාත්මක පාලන සහතිකය",
+        institution: "Denver විශ්ව විද්‍යාලය, කොලරැඩෝ, ඇමරිකාව"
+      },
+      {
+        degree: "ස්වාභාවික භෞතික සම්මතයන් පිහිටුවීමේ සහතිකය",
+        institution: "ජාතික සම්මත හා තාක්ෂණ කාර්යාලය, Gaithersburg, MD, ඇමරිකාව"
+      },
+      {
+        degree: "සම්මත විශේෂණ ලිවීමේ සහතිකය",
+        institution: "බ්‍රිතාන්‍ය සම්මත ආයතනය (BSI Group)"
+      }
+    ]
+  },
+  awards: {
+    title: "ගෞරව, සම්මාන සහ ප්‍රකාශන",
+    imageAlt: "බාලෙන් ෂාගේ සම්මාන සහ ප්‍රකාශන",
+    items: [
+      {
+        title: "ග්‍රීටර් ගුඩ් සම්මාන",
+        details: "Mazari Africa, Istanbul, කෙන්යා, මැයි 2021"
+      },
+      {
+        title: "විද්‍යා ඩොක්ටරේට් (ගෞරවමාන)",
+        details: "Jurumegh Opriga Obriga විද්‍යා සහ තාක්ෂණ විශ්ව විද්‍යාලය, Siyap, කෙන්යා, දෙසැම්බර් 2010"
+      },
+      {
+        title: "ජාතිකත්වය සඳහා පසුබැසීමේ මාර්ගය",
+        details: "Nairobi Mountainsho Publishers, 2017"
+      },
+      {
+        title: "සැහැල්ලු නිදහස් ඇගිලි",
+        details: "Nairobi Mountainsho Publishers, 2019"
+      },
+      {
+        title: "සමාජ සංවර්ධනයේ නායකත්ව ඩොක්ටරේට් (ගෞරවමාන)",
+        details: "Lambalong Creative Technology විශ්ව විද්‍යාලය, Kuala Lumpur, ජූලි 2012"
+      },
+      {
+        title: "ගෞරවමාන ඩොක්ටරේට්",
+        details: "Florida Agricultural Mechanical University, USA, 2009"
+      },
+      {
+        title: "නීති ඩොක්ටරේට් (LLD) (ගෞරවමාන)",
+        details: "නෙරොබි විශ්ව විද්‍යාලය, කෙන්යා, ඔක්තෝබර් 2008"
+      }
+    ]
+  },
+  leadership: {
+    title: "නායකත්වය සහ බලපෑම්",
+    mayorSection: {
+      title: "කට්මණ්ඩු මහමැති ලෙස",
+      description: "2022 තේරීම් වුනා පසු, බාලෙන් ෂා අවධානය යොමු කළ ප්‍රධාන නගර ගැටළු:",
+      initiatives: [
+        "නගර සැලසුම් කිරීම සහ සංවර්ධනය",
+        "අපද්‍රව්‍ය කළමනාකරණ විසඳුම්",
+        "අධිෂ්ඨානික කටයුතු මර්දන උත්සාහ",
+        "ආධාර හා ව්‍යූහ මධ්‍යමගීකරණය",
+        "සංස්කෘතික හා උරුම සංරක්ෂණය"
+      ]
+    },
+    cultureSection: {
+      title: "සංස්කෘතික බලපෑම්",
+      description: "රාජ්‍ය සේවයට පිවිසීමට පෙර, බාලෙන් නෙපාලයේ හිප්-හොප් සමාජයේ ප්‍රසිද්ධ රැප් ගායකයෙකු සහ ගායන ලේඛකයෙකු ලෙස හිටියා. ඔහුගේ සංගීතය සාමාජික ගැටලු කතා කරයි, එය ඔහුගේ රාජ්‍ය ක්‍රමවේදයේ විවෘත සහිතත්වය සමඟ සම්බන්ධ වේ.",
+      quote: "ඔහුගේ අමුතු පාලන රීතිය සහ සම්ප්‍රදායික ක්‍රමවලට අභියෝග දැක්වීම නිසා, බාලෙන් අගය සහ විවේචන දෙකටම ලක්වී ඇත."
+    }
+  }
+}
+},
 };
+
+    
+
+  
+  
+ 
+
+    
+
+
