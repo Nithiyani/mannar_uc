@@ -250,4 +250,45 @@ export interface TranslationData {
     description: string;
   }>;
   }
+  ChairmanPage :{
+  hero: {
+    name: string;
+    description: string;
+    cta: string;
+  };
+  whoIsBalen: {
+    title: string;
+    paragraphs: string[];
+  };
+  academics: {
+    title: string;
+    imageAlt: string;
+    qualifications: Array<{
+      degree: string;
+      institution: string;
+    }>;
+  };
+  awards: {
+    title: string;
+    imageAlt: string;
+    items: Array<{
+      title: string;
+      details: string;
+    }>;
+  };
+  leadership: {
+    title: string;
+    mayorSection: {
+      title: string;
+      description: string;
+      initiatives: string[];
+    };
+    cultureSection: {
+      title: string;
+      description: string;
+      quote: string;
+    };
+  };
+}
+ 
 }
